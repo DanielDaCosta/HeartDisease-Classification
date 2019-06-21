@@ -1,5 +1,5 @@
 # Internship Candidate - DANIEL PEREIRA DA COSTA
-# Prediction model built based on Mission_Prediction_Dataset.csv data
+# Prediction model built based on Mission_Prediction_Dataset.csv dataset
 
 import pandas as pd
 import numpy as np
@@ -163,4 +163,4 @@ print('Confusion Matrix\n', confusion_matrix(y_test, y_pred))
 
 print('SVM Accuracy: ', metrics.accuracy_score(y_test, y_pred))
 
-#plt.show()  # Comment this line if any figure wants to be displayed
+plt.show()  # Comment this line if any figure wants to be displayed

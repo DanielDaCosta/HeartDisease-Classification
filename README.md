@@ -18,7 +18,7 @@ This is created using:
 
 ## Developing Process
 ### Preprocessing 
-The first step was to analyze the dataset. After verifying the non existence of missing values, the next step was to 
+The first step was to analyze the dataset. After verifying the non existence of missing values, the following step was to 
 understand how the features were distributed. As some of the variables had similar distributions the dataset was reorganized
 so that these features would be side by side.
 
@@ -30,54 +30,59 @@ of the data. For a more precise detection, Z-score was used in order to find and
 
 Since the features have different scales and in order to make the training less sensitive to the scales of variables,
 the dataset was normalized. For those with gaussian distributions the best way to rescale them was using standardization.
-The binary data don't need normalization so its values weren't changed. For the rest of the data, they were normalized using a 
+The binary data did not need normalization so its values did not change. For the rest of the data, they were normalized using a 
 MinMaxScale function.
 
 ### Creating ML Model
 
 #### Neural Network
 
-For this problem a Neural Network classification model was used. This model was chosen because I already had worked with this kind
-of Machine Learning Algorithm. Because of the complexity of the data, with multiples variables, a Multilayer Perceptron 
-with two hidden layers was the best configuration found. 
+For this problem a Neural Network classification model was used. Because of its versatility and also the fact that I was
+already familiar with this Machine Learning Model, it ended up being chosen. Due to the complexity of the data, 
+with multiples variables, a Multilayer Perceptron with two hidden layers was the best configuration to use. 
 
-For the activation functions, the inputs range were basically between -1 and 1 (some values were higher due to standardization)
-and for that the 'tanh' function was chosen. Since it was a classification problem a 'sigmoid' was used in output layer.
+The inputs range were basically between -1 and 1 (some values were higher due to standardization), so for the hidden layers' 
+activation functions the 'tanh' function was chosen. Since it was a classification problem a 'sigmoid' was used in output
+layer.
 
 To prevent overfitting methods such as: Droup out and L1 and L2 Regularization, were used, but the result was not good 
 enough, due to the small neural network configuration (only 7 neurons in each layer). The best result was obtained using 
-the early stopping method. The model efficiency was measured using accuracy metric.
+the early stopping method. The model efficiency was measured using accuracy metric, as it was asked.
 
 30% of the data was used to test the model, 10% as validation set and the rest was used for training.
 
-The model has an accuracy an average accuracy 84,019% on the test set and 87,455% on the train set. 
+The model has an accuracy an average accuracy 84,366% on the test set and 87,55% on the train set. 
 It's a reasonable result but not the best one. The model showed itself to be difficult to optimize since the neural
 network was small and so was the dataset.
 
 #### Support Vector Machines
 
-This model used the same data base than the Neural Network method. Using 30% of the data to test the model and the rest
-for training. SVM was chosen because its capable of doing classification, easy implementation and also due to the fact that
-the input data of SVM is the same type of the one used in the last model.
+In order to compare the obtained result using the Neural Network method, another ML model was used. The chosen one was
+Support Vector Machine modes. SVM was chosen since iis capable of doing classification, has an easy implementation and 
+also due to the fact that the input data is the same type of the one used in the last model. Using 30% of the data to 
+test the model and the rest for training.
 
 Because of data's complexity and since the target has only two classes, a 'sigmoid' was used as the kernel. The other ones:
 linear, gaussian and polynomial were also tested, but they did not give the best result.
 
+The model has an average accuracy of 84,36%, almost the same obtained with the last model, which shows the consistency of 
+the results.
+
 
 ## Output.txt file
 
-This file contains the prediction results of both models and also an average accuracy for each of them.
+This file contains a list of ten prediction results of both models and also an average accuracy for each of them.
 
 ## Excecution
 
 The path to the csv file: *Mission_Prediction_Dataset.csv*, should be added in the function pd.read_csv("*Add path here*"), 
-line 21. The python file 'teste1.py' just have to be executed with all the needed libraries. The output contains the following 
-figures. Comment the last line of the code the figures do not want to be displayed:
+line 21. The python file 'Daniel_Prediction.py' just have to be executed with all the needed libraries. The output contains 
+the following figures. Comment the last line of the code, line 166, if the figures do not want to be displayed:
 
 * Distributions graphs of each feature
 * Histogram of the output data
 * Correlation Matrix 
-* Loss function of training and test sets
+* Neural Network Loss function of training and test sets
 
-The Neural Networks results (confusion Matrix and accuracy) and SVM results (confusion Matrix and accuracy) will be shown,
-in that order.
+The Neural Networks results (confusion Matrix and accuracy) and SVM results (confusion Matrix and accuracy) will be 
+shown on the screen, in that order.
