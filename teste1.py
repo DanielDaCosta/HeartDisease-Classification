@@ -18,7 +18,7 @@ from sklearn.metrics import accuracy_score
 # Reading csv file
 disease_data = pd.read_csv("/Users/danieldacosta/PycharmProjects/CyberLab/Mission_Prediction_Dataset.csv")
 
-# PREPROCESSING DATA
+### PREPROCESSING DATA
 
 # Analyzing Data
 disease_data.shape
@@ -93,7 +93,7 @@ X = sc.fit_transform(X)
 X_train, X_test, y_train, y_test = train_test_split(X, Y, test_size=0.30)
 
 
-# Creating Neural Network
+## CREATING NEURAL NETWORKS
 
 classifier = Sequential()
 # First Hidden Layer
@@ -104,15 +104,20 @@ classifier.add(Dense(7, activation='tanh', kernel_initializer='random_normal'))
 classifier.add(Dense(1, activation='sigmoid', kernel_initializer='random_normal'))
 
 # Compiling the neural network
+
 classifier.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
 
 # Early stopping
 
-es = EarlyStopping(monitor='val_loss', mode='min', verbose=0, patience=10)
+es = EarlyStopping(monitor='val_loss', mode='min',verbose=0, patience=10)
 
 # Fitting the data to the training dataset
+
 history = classifier.fit(X_train, y_train, batch_size=30, epochs=400, validation_split=0.1, callbacks=[es])
 eval_model = classifier.evaluate(X_train, y_train)
+
+# Training results
+
 print('Train loss:', eval_model[0])
 print('Train Accuracy', eval_model[1])
 
@@ -120,16 +125,20 @@ y_pred = classifier.predict(X_test)
 y_pred = (y_pred > 0.5)
 
 # Confusion Matrix
+
 cm = confusion_matrix(y_test, y_pred)
 print('Confusion Matrix: \n', cm)
 
-eval_test = classifier.evaluate(X_test,y_test)
+# Test Results
+
+eval_test = classifier.evaluate(X_test, y_test)
 print('Test loss:', eval_test[0])
 print('Test Accuracy', eval_test[1])
 
 # Plot training history
+
 plt.figure(16)
 plt.plot(history.history['loss'], label='train')
 plt.plot(history.history['val_loss'], label='test')
 plt.legend()
-plt.show()
+plt.show()  # Comment this line if any figure wants to be displayed

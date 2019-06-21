@@ -1,3 +1,6 @@
+# Results Analysis 
+
+
 Sick : 54.45544554455446 %
 Not sick : 45.54455445544555 %
 Train on 180 samples, validate on 20 samples
