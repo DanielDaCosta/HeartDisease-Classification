@@ -15,19 +15,25 @@ from sklearn.metrics import accuracy_score
 # Reading csv file
 disease_data = pd.read_csv("/Users/danieldacosta/PycharmProjects/CyberLab/Mission_Prediction_Dataset.csv")
 
+# PREPROCESSING DATA
 
 # Analyzing Data
 disease_data.shape
 disease_data.describe()
-features = ['column1', 'column4', 'column5', 'column8', 'column3', 'column7', 'column10', 'column11', 'column12', 'column13', 'column2', 'column6','column9','column14']
-disease_data = disease_data[features]  # Putting side by side features with the same input data type
 print(disease_data.describe())
+
+# Checking for Missing Values
+disease_data.isnull().any().sum()
+
+# Distribution of dataset
+features = disease_data.iloc[:, 0:13].columns
 for i in range(disease_data.shape[1] - 1):
     plt.figure(i+1)
     column = [disease_data[features[i]].values]
     sns.distplot(column)
     plt.xlabel(features[i])
-
+features = ['column1', 'column4', 'column5', 'column8', 'column3', 'column7', 'column10', 'column11', 'column12', 'column13', 'column2', 'column6','column9','column14']
+disease_data = disease_data[features]  # Putting side by side features with the same input data type
 
 # Analyzing Output
 data_size = disease_data.shape[0]
@@ -45,12 +51,8 @@ plt.title("Transaction class distribution")
 plt.xticks(range(2), labels)
 plt.xlabel("Class")
 plt.ylabel("Frequency")
+plt.figure(17)
 
-
-# PREPROCESSING DATA
-
-# Checking for Missing Values
-disease_data.isnull().any().sum()
 
 #sns.pairplot(disease_data)
 plt.figure(15)
@@ -128,4 +130,4 @@ plt.figure(16)
 plt.plot(history.history['loss'], label='train')
 plt.plot(history.history['val_loss'], label='test')
 plt.legend()
-#plt.show()
+plt.show()
