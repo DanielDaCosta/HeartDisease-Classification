@@ -1,4 +1,4 @@
-# Internship Candidate - Daniel Pereira da Costa
+# Internship Candidate - DANIEL PEREIRA DA COSTA
 # Prediction model built based on Mission_Prediction_Dataset.csv data
 
 import pandas as pd
@@ -18,11 +18,11 @@ from sklearn.svm import SVC
 from sklearn import metrics
 
 # Reading csv file
-disease_data = pd.read_csv("/Users/danieldacosta/PycharmProjects/CyberLab/Mission_Prediction_Dataset.csv")
+disease_data = pd.read_csv("/Users/danieldacosta/PycharmProjects/CyberLab/Mission_Prediction_Dataset.csv")  # Paste here the path to the CSV file
 
 ### PREPROCESSING DATA
 
-# Analyzing Data
+# Analyzing Data statistics
 disease_data.shape
 disease_data.describe()
 
@@ -39,7 +39,7 @@ for i in range(disease_data.shape[1] - 1):
 features = ['column1', 'column4', 'column5', 'column8', 'column3', 'column7', 'column10', 'column11', 'column12', 'column13', 'column2', 'column6','column9','column14']
 disease_data = disease_data[features]  # Putting side by side features with the same input data type
 
-# Analyzing Output
+# Analyzing Output Distribution
 data_size = disease_data.shape[0]
 sick = disease_data[disease_data['column14'] == 1]
 not_sick = disease_data[disease_data['column14'] == 0]
@@ -87,7 +87,7 @@ Y = disease_data.iloc[:, 13]
 sc = StandardScaler()
 X = sc.fit_transform(X)
 
-# Splitting data for  Training and Test
+# Splitting data for Training and Test sets
 
 X_train, X_test, y_train, y_test = train_test_split(X, Y, test_size=0.30)
 
@@ -113,11 +113,11 @@ es = EarlyStopping(monitor='val_loss', mode='min',verbose=0, patience=10)
 # Fitting the data to the training dataset
 
 history = classifier.fit(X_train, y_train, batch_size=20, epochs=400, validation_split=0.1, callbacks=[es], verbose=0)
-eval_model = classifier.evaluate(X_train, y_train,verbose=0)
+eval_model = classifier.evaluate(X_train, y_train, verbose=0)
 
 # Training results
 
-print('\n Neural Networks Results: ')
+print('\nNeural Networks Results: ')
 
 print('\nTrain loss:', eval_model[0])
 print('Train Accuracy', eval_model[1])
@@ -135,7 +135,6 @@ print('\nConfusion Matrix: \n', cm)
 eval_test = classifier.evaluate(X_test, y_test,verbose=0)
 print('\nTest loss:', eval_test[0])
 print('Test Accuracy', eval_test[1])
-print('\n')
 
 # Plot training history
 
@@ -146,19 +145,22 @@ plt.legend()
 plt.xlabel('Loss - Neural Network')
 
 
-## Support Vector Machines
+## SUPPORT VECTOR MACHINES
 
-print('Support Vector Machine Results: \n')
+print('\nSupport Vector Machines Results:\n')
 
 # Creating SVM
+
 svclassifier = SVC(kernel='sigmoid', gamma='auto')
 svclassifier.fit(X_train, y_train)
 y_pred = svclassifier.predict(X_test)
 
 # Confusion Matrix
+
 print('Confusion Matrix\n', confusion_matrix(y_test, y_pred))
 
 # SVM accuracy
+
 print('SVM Accuracy: ', metrics.accuracy_score(y_test, y_pred))
 
-plt.show()  # Comment this line if any figure wants to be displayed
+#plt.show()  # Comment this line if any figure wants to be displayed

@@ -14,6 +14,7 @@ This is created using:
 * Keras-Preprocessing: V1.1.0
 * Scikit-learn: V0.21..2
 * Scipy: V1.3.0
+* Matplotlib: V3.1.0
 
 ## Developing Process
 ### Preprocessing 
@@ -65,11 +66,12 @@ linear, gaussian and polynomial were also tested, but they did not give the best
 
 ## Output.txt file
 
-This file contains the prediction results of both models.
+This file contains the prediction results of both models and also an average accuracy for each of them.
 
 ## Excecution
 
-The python file 'teste1.py' just have to be executed with all the needed libraries. The output contains the following 
+The path to the csv file: *Mission_Prediction_Dataset.csv*, should be added in the function pd.read_csv("*Add path here*"), 
+line 21. The python file 'teste1.py' just have to be executed with all the needed libraries. The output contains the following 
 figures. Comment the last line of the code the figures do not want to be displayed:
 
 * Distributions graphs of each feature
