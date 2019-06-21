@@ -1,3 +1,6 @@
+# Internship Candidate - Daniel Pereira da Costa
+# Prediction model built based on Mission_Prediction_Dataset.csv data
+
 import pandas as pd
 import numpy as np
 import seaborn as sns
@@ -51,7 +54,6 @@ plt.title("Transaction class distribution")
 plt.xticks(range(2), labels)
 plt.xlabel("Class")
 plt.ylabel("Frequency")
-plt.figure(17)
 
 
 #sns.pairplot(disease_data)

@@ -17,7 +17,7 @@ This is created using:
 
 ## Developing Process
 ### Preprocessing 
-The first step was to analyze the dataset. After verifying the non existence of missing values, the next stop was to 
+The first step was to analyze the dataset. After verifying the non existence of missing values, the next step was to 
 understand how the features were distributed. As some of the variables had similar distributions the dataset was reorganized
 so that these features would be side by side.
 
@@ -32,5 +32,30 @@ the dataset was normalized. For those with gaussian distributions the best way t
 The binary data don't need normalization so its values weren't changed. For the rest of the data, they were normalized using a 
 MinMaxScale function.
 
-###Creating ML Model
+### Creating ML Model
 
+For this problem a Neural Network classification model was used. This model was chosen because I already had worked with this kind
+of Machine Learning Algorithm. Because of the complexity of the data, with multiples variables, a Multilayer Perceptron 
+with two hidden layers was the best configuration found. 
+
+For the activation functions, the inputs range were basically between -1 and 1 (some values were higher due to standardization)
+and for that the 'tanh' function was chosen. Since it was a classification problem a 'sigmoid' was used in output layer.
+
+To prevent overfitting methods such as: Droup out and L1 and L2 Regularization, were used, but the result wasn't good 
+enough, due to the small neural network configuration (only 7 neurons in each layer). The best result was obtained using 
+the early stopping method. The model efficiency was measured using accuracy metric.
+
+30% of the data was used to test the model, 10% as validation set and the rest was used for training.
+
+## Output.txt file
+
+This file contains the prediction results 
+
+## Excecution
+
+The python file 'teste1.py' just have to be executed with all the needed libraries. The output contains the following 
+figures:
+* Distributions graphs of each feature
+* Histogram of the output data
+* Correlation Matrix 
+* Loss function of training and test sets
