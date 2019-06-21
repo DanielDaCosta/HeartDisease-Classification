@@ -47,6 +47,10 @@ the early stopping method. The model efficiency was measured using accuracy metr
 
 30% of the data was used to test the model, 10% as validation set and the rest was used for training.
 
+The model has an accuracy an average accuracy 84,019% on the test set and 87,455% on the train set. 
+It's a reasonable result but not the best one. The model showed itself to be difficult to optimize since the neural
+network was small and so was the dataset.
+
 ## Output.txt file
 
 This file contains the prediction results 
