@@ -34,6 +34,8 @@ MinMaxScale function.
 
 ### Creating ML Model
 
+#### Neural Network
+
 For this problem a Neural Network classification model was used. This model was chosen because I already had worked with this kind
 of Machine Learning Algorithm. Because of the complexity of the data, with multiples variables, a Multilayer Perceptron 
 with two hidden layers was the best configuration found. 
@@ -41,7 +43,7 @@ with two hidden layers was the best configuration found.
 For the activation functions, the inputs range were basically between -1 and 1 (some values were higher due to standardization)
 and for that the 'tanh' function was chosen. Since it was a classification problem a 'sigmoid' was used in output layer.
 
-To prevent overfitting methods such as: Droup out and L1 and L2 Regularization, were used, but the result wasn't good 
+To prevent overfitting methods such as: Droup out and L1 and L2 Regularization, were used, but the result was not good 
 enough, due to the small neural network configuration (only 7 neurons in each layer). The best result was obtained using 
 the early stopping method. The model efficiency was measured using accuracy metric.
 
@@ -51,15 +53,29 @@ The model has an accuracy an average accuracy 84,019% on the test set and 87,455
 It's a reasonable result but not the best one. The model showed itself to be difficult to optimize since the neural
 network was small and so was the dataset.
 
+#### Support Vector Machines
+
+This model used the same data base than the Neural Network method. Using 30% of the data to test the model and the rest
+for training. SVM was chosen because its capable of doing classification, easy implementation and also due to the fact that
+the input data of SVM is the same type of the one used in the last model.
+
+Because of data's complexity and since the target has only two classes, a 'sigmoid' was used as the kernel. The other ones:
+linear, gaussian and polynomial were also tested, but they did not give the best result.
+
+
 ## Output.txt file
 
-This file contains the prediction results 
+This file contains the prediction results of both models.
 
 ## Excecution
 
 The python file 'teste1.py' just have to be executed with all the needed libraries. The output contains the following 
-figures:
+figures. Comment the last line of the code the figures do not want to be displayed:
+
 * Distributions graphs of each feature
 * Histogram of the output data
 * Correlation Matrix 
 * Loss function of training and test sets
+
+The Neural Networks results (confusion Matrix and accuracy) and SVM results (confusion Matrix and accuracy) will be shown,
+in that order.

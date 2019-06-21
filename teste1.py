@@ -14,6 +14,8 @@ from keras.layers import Dense
 from keras.callbacks import EarlyStopping
 from sklearn.metrics import confusion_matrix
 from sklearn.metrics import accuracy_score
+from sklearn.svm import SVC
+from sklearn import metrics
 
 # Reading csv file
 disease_data = pd.read_csv("/Users/danieldacosta/PycharmProjects/CyberLab/Mission_Prediction_Dataset.csv")
@@ -54,8 +56,6 @@ plt.xticks(range(2), labels)
 plt.xlabel("Class")
 plt.ylabel("Frequency")
 
-
-#sns.pairplot(disease_data)
 plt.figure(15)
 sns.heatmap(disease_data.corr(), annot=True)  # Correlation Matrix of the Data
 
@@ -65,8 +65,8 @@ z = np.abs(stats.zscore(disease_data))
 threshold = 3
 disease_data = disease_data[(z < 3).all(axis=1)]
 
+# Scatter Plot - Uncomment only if needed. High computational time required.
 
-#disease_data.hist()
 #from pandas.plotting import scatter_matrix
 #scatter_matrix(disease_data.iloc[1:, :]) #Correlacao entre os dados
 
@@ -117,6 +117,8 @@ eval_model = classifier.evaluate(X_train, y_train,verbose=0)
 
 # Training results
 
+print('\n Neural Networks Results: ')
+
 print('\nTrain loss:', eval_model[0])
 print('Train Accuracy', eval_model[1])
 
@@ -134,10 +136,29 @@ eval_test = classifier.evaluate(X_test, y_test,verbose=0)
 print('\nTest loss:', eval_test[0])
 print('Test Accuracy', eval_test[1])
 print('\n')
+
 # Plot training history
 
 plt.figure(16)
 plt.plot(history.history['loss'], label='train')
 plt.plot(history.history['val_loss'], label='test')
 plt.legend()
-#plt.show()  # Comment this line if any figure wants to be displayed
+plt.xlabel('Loss - Neural Network')
+
+
+## Support Vector Machines
+
+print('Support Vector Machine Results: \n')
+
+# Creating SVM
+svclassifier = SVC(kernel='sigmoid', gamma='auto')
+svclassifier.fit(X_train, y_train)
+y_pred = svclassifier.predict(X_test)
+
+# Confusion Matrix
+print('Confusion Matrix\n', confusion_matrix(y_test, y_pred))
+
+# SVM accuracy
+print('SVM Accuracy: ', metrics.accuracy_score(y_test, y_pred))
+
+plt.show()  # Comment this line if any figure wants to be displayed

@@ -1,6 +1,12 @@
 RESULTS ANALYSIS
 
-The model has an accuracy an average accuracy 84,019% on the test set and 87,455% on the train set. It's a reasonable result but not the best one. The model showed itself to be difficult to optimize since the neural network was small and so was the dataset.
+- Neural Network
+
+The model has an accuracy an average accuracy of 84,019% on the test set and 87,455% on the train set. It's a reasonable result but not the best one. The model showed itself to be difficult to optimize since the neural network was small and so was the dataset.
+
+- SVM 
+
+The model has an average accuracy, The results were similar to the Neural Network model, but with more consistent results.
 
 Train on 180 samples, validate on 20 samples.
 
