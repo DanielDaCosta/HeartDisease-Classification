@@ -15,8 +15,8 @@ This is created using:
 * Scikit-learn: V0.21..2
 * Scipy: V1.3.0
 
-##Developing Process
-###Preprocessing 
+## Developing Process
+### Preprocessing 
 The first step was to analyze the dataset. After verifying the non existence of missing values, the next stop was to 
 understand how the features were distributed. As some of the variables had similar distributions the dataset was reorganized
 so that these features would be side by side.
