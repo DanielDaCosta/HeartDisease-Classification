@@ -3,9 +3,9 @@
 Prediction model built based on Mission_Prediction_Dataset.csv data that can predict the presence of a disease in the patient. 
 Model created as part of CYBERLABS Mission: Disease classification, Internship application.
 
-
 ## Technologies
 This is created using:
+* Python 3.7
 * Numpy: V1.16.4
 * Pandas: V0.24.2
 * Seaborn: V0.9.0
@@ -30,8 +30,7 @@ of the data. For a more precise detection, Z-score was used in order to find and
 
 Since the features have different scales and in order to make the training less sensitive to the scales of variables,
 the dataset was normalized. For those with gaussian distributions the best way to rescale them was using standardization.
-The binary data did not need normalization so its values did not change. For the rest of the data, they were normalized using a 
-MinMaxScale function.
+The binary data did not need normalization so its values did not change. For the rest of the data, they were normalized using a MinMaxScale function.
 
 ### Creating ML Model
 
@@ -76,10 +75,9 @@ This file contains a list of ten prediction results of both models and also an a
 ## Excecution
 
 The path to the csv file: *Mission_Prediction_Dataset.csv*, should be added in the function pd.read_csv("*Add path here*"), 
-line 21. The python file 'Daniel_Prediction.py' just have to be executed with all the needed libraries. The output contains 
-the following figures. Comment the last line of the code, line 166, if the figures do not want to be displayed:
+line 21. The python file 'Daniel_Prediction.py' just have to be executed with all the needed libraries, Python 3.7 was used. The output contains the following figures, 16 in total. Comment the last line of the code, line 166, if the figures do not want to be displayed:
 
-* Distributions graphs of each feature
+* Distributions graphs of each feature (thirtenn figures)
 * Histogram of the output data
 * Correlation Matrix 
 * Neural Network Loss function of training and test sets
