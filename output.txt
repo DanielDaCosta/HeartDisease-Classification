@@ -1,4 +1,4 @@
-*RESULTS ANALYSIS
+*RESULTS ANALYSIS - Daniel Pereira da Costa
 
 - Neural Network
 
