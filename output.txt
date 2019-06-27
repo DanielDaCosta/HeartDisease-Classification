@@ -1,5 +1,4 @@
-RESULTS ANALYSIS
-
+*RESULTS ANALYSIS - Daniel Pereira da Costa
 
 - Neural Network
 
@@ -7,9 +6,11 @@ The model has an accuracy an average accuracy of 84,366% on the test set and 87,
 
 - Support Vector Machines
 
-The model has an average accuracy of 84,36%. The same result obtained with the Neural Network model, but with more consistent results.
+The model has an average accuracy of 84,36%. The same result obtained with the Neural Network model, but with more consistent results. 
 
-30% of the data used to test the model. 
+*LIST OF 10 RESULTS OUTPUT
+
+30% of the data used to test the model.
 
 1)
 
