@@ -73,7 +73,7 @@ the results.
 
 This file contains a list of ten prediction results of both models and also an average accuracy for each of them.
 
-## Excecution
+## Execution
 
 The path to the csv file: *Mission_Prediction_Dataset.csv*, should be added in the function pd.read_csv("*Add path here*"), 
 line 21. The python file 'Daniel_Prediction.py' just have to be executed with all the needed libraries, Python 3.7 was used. The output contains the following figures, 16 in total. Comment the last line of the code, line 166, if the figures do not want to be displayed:
