@@ -84,3 +84,7 @@ line 21. The python file 'Daniel_Prediction.py' just have to be executed with al
 
 The Neural Networks results (confusion Matrix and accuracy) and SVM results (confusion Matrix and accuracy) will be 
 shown on the screen, in that order.
+
+## Acknowledgemetns
+
+The dataset came from a Kaggle competition that can be foud here [here](https://www.kaggle.com/cdabakoglu/heart-disease-classifications-machine-learning).
