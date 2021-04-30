@@ -3,7 +3,7 @@
 Prediction model built based on Mission_Prediction_Dataset.csv data that can predict the presence of a disease in the patient. 
 Model created as part of CYBERLABS Mission: Disease classification.
 
-## Technologies
+## Requirements
 This is created using:
 * Python 3.7
 * Numpy: V1.16.4
