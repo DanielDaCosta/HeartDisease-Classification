@@ -4,7 +4,7 @@ Classification model built based on Mission_Prediction_Dataset.csv data that can
 Model created as part of CYBERLABS Mission: Disease classification.
 
 ## Requirements
-This is created using:
+Install the following packages: `pip install -r requirements.txt`
 * Python 3.7
 * Numpy: V1.16.4
 * Pandas: V0.24.2
