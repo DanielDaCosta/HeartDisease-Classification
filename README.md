@@ -1,7 +1,7 @@
 # Heart Disease Classification
 
-Classification model built based on Mission_Prediction_Dataset.csv data that can predict the presence of a disease in the patient. 
-Model created as part of CYBERLABS Mission: Disease classification.
+Classification model built based on `Mission_Prediction_Dataset.csv data that can predict the presence of a disease in the patient. 
+Model created as part of CYBERLABS Mission: Disease Classification.
 
 ## Requirements
 Install the following packages: `pip install -r requirements.txt`
