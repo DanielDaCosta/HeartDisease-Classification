@@ -68,7 +68,7 @@ The model has an average accuracy of 84,36%, almost the same obtained with the l
 the results.
 
 
-## Output.txt file
+## Output text file
 
 This file contains a list of ten prediction results of both models and also an average accuracy for each of them.
 
